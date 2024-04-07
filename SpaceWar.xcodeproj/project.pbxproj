@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B3BE3EF2BC306BF006876F9 /* Stars.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3B3BE3EE2BC306BF006876F9 /* Stars.sks */; };
+		3B3BE3F12BC313C9006876F9 /* Fire.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3B3BE3F02BC313C9006876F9 /* Fire.sks */; };
 		3B74AB152BC2875A00F16ECD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B74AB142BC2875A00F16ECD /* AppDelegate.swift */; };
 		3B74AB172BC2875A00F16ECD /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3B74AB162BC2875A00F16ECD /* GameScene.sks */; };
 		3B74AB192BC2875A00F16ECD /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3B74AB182BC2875A00F16ECD /* Actions.sks */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B3BE3EE2BC306BF006876F9 /* Stars.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Stars.sks; sourceTree = "<group>"; };
+		3B3BE3F02BC313C9006876F9 /* Fire.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Fire.sks; sourceTree = "<group>"; };
 		3B74AB112BC2875A00F16ECD /* SpaceWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B74AB142BC2875A00F16ECD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B74AB162BC2875A00F16ECD /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -43,6 +47,8 @@
 		3B74AB082BC2875A00F16ECD = {
 			isa = PBXGroup;
 			children = (
+				3B3BE3EE2BC306BF006876F9 /* Stars.sks */,
+				3B3BE3F02BC313C9006876F9 /* Fire.sks */,
 				3B74AB132BC2875A00F16ECD /* SpaceWar */,
 				3B74AB122BC2875A00F16ECD /* Products */,
 			);
@@ -129,11 +135,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B3BE3F12BC313C9006876F9 /* Fire.sks in Resources */,
 				3B74AB172BC2875A00F16ECD /* GameScene.sks in Resources */,
 				3B74AB202BC2875A00F16ECD /* Base in Resources */,
 				3B74AB222BC2875B00F16ECD /* Assets.xcassets in Resources */,
 				3B74AB192BC2875A00F16ECD /* Actions.sks in Resources */,
 				3B74AB252BC2875B00F16ECD /* Base in Resources */,
+				3B3BE3EF2BC306BF006876F9 /* Stars.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,19 +306,21 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R9MAM5678Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.SpaceWar;
+				PRODUCT_BUNDLE_IDENTIFIER = alexPechinkin.SpaceWar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -325,19 +335,21 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R9MAM5678Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.SpaceWar;
+				PRODUCT_BUNDLE_IDENTIFIER = alexPechinkin.SpaceWar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
