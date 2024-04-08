@@ -23,14 +23,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var gameIsPaused: Bool = false
     var spaceShipLayer: SKNode!
     
-    func pauseButtonPressed(sender: AnyObject) {
-        if !gameIsPaused {
-            pauseTheGame()
-        } else {
-            unpauseTheGame()
-        }
-    }
-    
     func pauseTheGame() {
         gameIsPaused = true
         self.asteroidLayer.isPaused = true
