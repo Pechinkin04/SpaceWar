@@ -13,12 +13,17 @@ class GameViewController: UIViewController {
     
     var gameScene: GameScene!
     var pauseViewController: PauseViewController!
+    var gameOverViewController: GameOverViewController!
+    var gameOverTimer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pauseViewController = (storyboard?.instantiateViewController(withIdentifier: "PauseViewController") as! PauseViewController)
         pauseViewController.delegate = self
+        
+        gameOverViewController = (storyboard?.instantiateViewController(withIdentifier: "gameOverViewController") as! GameOverViewController)
+        gameOverViewController.delegate = self
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -36,6 +41,9 @@ class GameViewController: UIViewController {
             
             view.showsFPS = true
             view.showsNodeCount = true
+            
+            startGameOverTimer()
+
         }
     }
 
@@ -51,7 +59,7 @@ class GameViewController: UIViewController {
         return true
     }
     
-    func showPauseScreen(_ viewController: PauseViewController) {
+    func showPauseScreen(_ viewController: UIViewController) {
         addChild(viewController)
         view.addSubview(viewController.view)
         viewController.view.frame = view.bounds
@@ -63,7 +71,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    func hidePauseScreen(viewController: PauseViewController) {
+    func hidePauseScreen(viewController: UIViewController) {
         viewController.willMove(toParent: nil)
         viewController.removeFromParent()
         viewController.view.removeFromSuperview()
@@ -76,6 +84,24 @@ class GameViewController: UIViewController {
             viewController.view.removeFromSuperview()
         }
 
+    }
+    
+    func startGameOverTimer() {
+        gameOverTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [self] _ in
+            // Проверка условия проигрыша
+            if self.gameScene.gameOver == true {
+                gameOver()
+            }
+        }
+    }
+
+
+    
+    func gameOver() {
+        showPauseScreen(gameOverViewController)
+        gameOverViewController.setScore(score: gameScene.score)
+        gameOverTimer?.invalidate()
+        gameScene.musicPlayer.stop()
     }
     
     @IBAction func pauseButtonPressed(_ sender: UIButton) {
@@ -106,5 +132,16 @@ extension GameViewController: PauseVCDelegate {
         hidePauseScreen(viewController: pauseViewController)
         gameScene.unpauseTheGame()
     }
+    
+}
+
+extension GameViewController: gameOverVCDelegate {
+    func gameOverViewControllerReplayButton(_ viewController: GameOverViewController) {
+        hidePauseScreen(viewController: gameOverViewController)
+        gameScene.resetTheGame()
+        startGameOverTimer()
+        gameScene.musicPlayer.play()
+    }
+    
     
 }

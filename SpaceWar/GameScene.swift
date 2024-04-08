@@ -27,6 +27,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var musicOn = true
     var soundOn = true
+    var gameOver = false
     
     func musicOnOrOff() {
         if musicOn {
@@ -54,12 +55,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         spaceShipLayer.isPaused = false
     }
     func resetTheGame() {
+        gameOver = false
+        asteroidLayer.removeAllChildren()
+        
         score = 0
         scoreLabel.text = "Score: \(score)"
         
         gameIsPaused = false
         self.asteroidLayer.isPaused = false
         physicsWorld.speed = 1
+        starsLayer.isPaused = false
+        spaceShipLayer.isPaused = false
     }
     
     override func didMove(to view: SKView) {
@@ -197,6 +203,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches {
+            spaceShipLayer.position = t.location(in: self)
+        }
+    }
+    
     func distanceCalc(a: CGPoint, b: CGPoint) -> CGFloat {
         return sqrt((b.x - a.x)*(b.x - a.x) + (b.y - a.y)*(b.y - a.y))
     }
@@ -252,8 +264,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         if contact.bodyA.categoryBitMask == spaceShipCategory && contact.bodyB.categoryBitMask == asteroidCategory || contact.bodyB.categoryBitMask == spaceShipCategory && contact.bodyA.categoryBitMask == asteroidCategory {
-            self.score = 0
+            //self.score = 0
             self.scoreLabel.text = "Score: \(self.score)"
+            
+            pauseTheGame()
+            gameOver = true
         }
         
         if soundOn {
