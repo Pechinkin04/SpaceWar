@@ -87,6 +87,21 @@ class GameViewController: UIViewController {
 }
 
 extension GameViewController: PauseVCDelegate {
+    func pauseViewControllerSoundButton(_ viewController: PauseViewController) {
+        gameScene.soundOn = !gameScene.soundOn
+        
+        let image = gameScene.soundOn ? UIImage(named: "on") : UIImage(named: "off")
+        viewController.soundButton.setImage(image, for: .normal)
+    }
+    
+    func pauseViewControllerMusicButton(_ viewController: PauseViewController) {
+        gameScene.musicOn = !gameScene.musicOn
+        gameScene.musicOnOrOff()
+        
+        let image = gameScene.musicOn ? UIImage(named: "on") : UIImage(named: "off")
+        viewController.musicButton.setImage(image, for: .normal)
+    }
+    
     func pauseViewControllerPlayButton(_ viewController: PauseViewController) {
         hidePauseScreen(viewController: pauseViewController)
         gameScene.unpauseTheGame()

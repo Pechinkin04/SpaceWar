@@ -75,6 +75,38 @@
                                     <action selector="menuButtonPress:" destination="gtL-RV-NXx" eventType="touchUpInside" id="bmx-2J-MvI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sound:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYk-Uf-bYf">
+                                <rect key="frame" x="78" y="416" width="103" height="41"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATq-Xm-Vhx">
+                                <rect key="frame" x="189" y="411" width="106" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="on"/>
+                                <connections>
+                                    <action selector="soundButtonPress:" destination="gtL-RV-NXx" eventType="touchUpInside" id="lHm-7m-nS0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVl-HM-Nma">
+                                <rect key="frame" x="189" y="469" width="106" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="on"/>
+                                <connections>
+                                    <action selector="musicButtonPress:" destination="gtL-RV-NXx" eventType="touchUpInside" id="fag-wc-q7j"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eZ-Uq-aoM">
+                                <rect key="frame" x="85" y="474" width="96" height="41"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="huw-Yl-w09"/>
                         <color key="backgroundColor" red="0.48026739690721654" green="0.48026739690721654" blue="0.48026739690721654" alpha="0.43455038265306123" colorSpace="custom" customColorSpace="displayP3"/>
@@ -85,6 +117,10 @@
                             <constraint firstItem="xht-es-fXm" firstAttribute="top" secondItem="huw-Yl-w09" secondAttribute="top" id="vn9-tv-qMT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="musicButton" destination="YVl-HM-Nma" id="vOW-xy-yXf"/>
+                        <outlet property="soundButton" destination="ATq-Xm-Vhx" id="1lX-qI-AhT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuR-oX-ZNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,12 +129,16 @@
     </scenes>
     <resources>
         <image name="moreIcon" width="90" height="90"/>
+        <image name="on" width="85.333335876464844" height="39.666667938232422"/>
         <image name="pause" width="90" height="90"/>
         <image name="pauseVC" width="800" height="314"/>
         <image name="playButton" width="200" height="200"/>
         <image name="shopIcon" width="90" height="90"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
